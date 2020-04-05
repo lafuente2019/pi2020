@@ -1,0 +1,93 @@
+/*--------------------*\
+  BOTAO
+\*--------------------*/
+.botao {
+  
+  padding: 0.8em 1.2em;
+
+  background-color: #bbb;
+  color: #fff;
+  border: none;
+
+  line-height: normal;
+  font-size: 1em;
+  text-decoration: none;
+}
+
+
+.botao:hover, .botao:focus {
+  background-color: #aaa;
+  color: #fff;
+
+  text-decoration: none;
+}
+
+.botao--principal {
+ 
+  border-radius: 10px;
+
+  background-color: #004b86;
+}
+
+.botao--principal:hover, .botao--principal:focus {
+  background-color: #003b6a;
+}
+
+.botao-tabela{
+  margin-top: -5px;
+  padding: 0.8em 1.2em;
+
+  background-color: #bbb;
+  color: #fff;
+  border: none;
+
+  border-radius: 10px;
+  background-color: #004b86;
+
+  line-height: normal;
+  font-size: 1em;
+  text-decoration: none;
+}
+
+/*--------------------*\
+  TITULO-FORMULARIO
+\*--------------------*/
+.titulo-formulario {
+  font-size: 2.6rem;
+  font-weight: normal;
+  color: #004b86;
+}
+
+.form-tabela{
+	background-color: #ccc;
+}
+
+/*--------------------*\
+  GRUPO-ENTRADA
+\*--------------------*/
+.grupo-entrada {
+  margin-bottom: 15px;
+}
+
+.grupo-entrada > label {
+  display: block;
+
+  font-weight: bold;
+}
+
+
+/*--------------------*\
+  CAMPO
+\*--------------------*/
+.campo {
+  display: block;
+  width: 100%;
+  height: 2.8em;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+
+  background-color: #fff;
+
+  font-size: 1.4rem;
+}
