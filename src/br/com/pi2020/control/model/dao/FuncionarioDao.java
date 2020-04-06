@@ -134,8 +134,67 @@ public class FuncionarioDao {
 		statement.setInt(19, funcionario.getId());
 		statement.execute();
 		
-	}
-	
+	}	
+  
+	      public static List<Funcionario> buscar(String busca)throws SQLException, Exception {
+		  String sql = "SELECT * FROM cadastroFuncionario WHERE id like ? or nome like ? or cpf like ? \n"
+		  		+ " or email like ? or cargo like ? or filial like ? or departamento like ? ";
+		  busca = '%' +busca+ '%';
+		  
+		  List <Funcionario> listaFuncionario = null;
+		  
+		  Connection conexao = null;
+		  
+		  PreparedStatement ps = null;
+		  
+		  ResultSet rs = null;
+		  
+		  try {
+			conexao = conexaoJDBCFactory.getConexao();
+			ps = conexao.prepareStatement(sql);
+			ps.setString(1, busca);
+			ps.setString(2, busca);
+			ps.setString(3, busca);
+			ps.setString(4, busca);
+			ps.setString(5, busca);
+			ps.setString(6, busca);
+			ps.setString(7, busca);
+			
+			
+			rs = ps.executeQuery();
+			
+			while(rs.next()) {
+				if(listaFuncionario == null) {
+					listaFuncionario = new ArrayList<Funcionario>();
+				}
+				int id = rs.getInt("id");
+				String nome = rs.getString("nome");
+				String cpf = rs.getString("cpf");
+				String email = rs.getString("email");
+				String cargo = rs.getString("cargo");
+				String filial = rs.getString("filial");
+				String departamento = rs.getString("departamento");
+				
+				Funcionario F = new Funcionario(id,nome,cpf,email,cargo,filial,departamento);
+				listaFuncionario.add(F);
+			}
+			
+		} catch (Exception e) {
+			e.getMessage();
+			System.out.println(e);
+		}finally {
+			if(rs != null && !rs.isClosed()) {
+				rs.close();
+			}
+			if(ps != null && !ps.isClosed()) {
+				ps.close();
+			}
+			if(conexao != null && !conexao.isClosed()) {
+				conexao.close();
+			}
+		}
+		  return listaFuncionario;
+	}  
 }
 
 	

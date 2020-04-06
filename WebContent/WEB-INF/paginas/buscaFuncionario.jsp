@@ -57,7 +57,7 @@
 			<th>Excluir</th>
 		</tr>
 
-		<c:forEach var="f" items="${funcionarios}">
+		<c:forEach var="f" items="${listaFuncionario}">
 			<tr>
 				<td>${f.id}</td>
 				<td>${f.nome}</td>

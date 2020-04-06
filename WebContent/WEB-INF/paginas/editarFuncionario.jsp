@@ -22,7 +22,7 @@
 			</nav>
 		</div>
 	</header>
-	<main>
+	
 	
 	<div class="container">
 		<form action="funcionarioServlet" method="post">
@@ -209,7 +209,7 @@
 				</div>
 		</form>
 	  </div>
-	</main>
+	
 	<footer class="layout-rodape">
 		<div class="container">
 			<p>&copy; Muchachos. Todos os direitos reservados.</p>

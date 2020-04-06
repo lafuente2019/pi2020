@@ -18,11 +18,11 @@
 		<div class="container">
 			<nav class="navegacao  ">
 				<a href="index.html"><img src="imagem/muchachos.png"
-					title="Home" width="60" height="60" alt="Muchachos" /></a>
+					title="HOME" width="60" height="60" alt="Muchachos" /></a>
 			</nav>
 		</div>
 	</header>
-	<main>
+	
 	<div class="container">
 		<form action="funcionarioServlet" method="post">
               <h1 class="titulo-formulario">${mensagem}</h1>
@@ -189,21 +189,21 @@
 				<div class="col-sm-3">
 					<div class="grupo-entrada">
 						<div style="text-align: center; margin-top: 20px">
-							<input type="submit" value="Buscar" class="botao-tabela">
+							<input type="submit" value="Salvar" class="botao-tabela">
 						</div>
 					</div>
 				</div>
 				<div class="col-sm-3">
 					<div class="grupo-entrada">
 						<div style="text-align: center; margin-top: 20px">
-							<input type="submit" value="Buscar" class="botao-tabela">
+							<input type="reset" value="Cancelarr" class="botao-tabela">
 						</div>
 					</div>
 				</div>
 				</div>
 		</form>
 	  </div>
-	</main>
+
 	<footer class="layout-rodape">
 		<div class="container">
 			<p>&copy; Muchachos. Todos os direitos reservados.</p>
