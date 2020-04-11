@@ -8,27 +8,26 @@
 <link rel="shortcut icon" href="imagem/muchachos.png">
 <link rel="stylesheet" href="css/estilobootstrap.css">
 <link rel="stylesheet" href="css/componentes.css">
-
 </head>
+
 <body>
+
 	<header class="layout-cabecalho layout-cabecalho--tabela">
 		<div class="container">
 			<nav class="navegacao  ">
 				<a href="index.html"><img src="imagem/muchachos.png" width="60"
-					height="60" alt="Muchachos" title="HOME" /></a>
+					height="60" alt="Muchachos" /></a>
 			</nav>
 		</div>
 	</header>
 
 	<div class="container">
-		<h1 class="titulo-formulario">${mensagem}</h1>
-		<h1 class="titulo-formulario">Gerenciamento de colaborador</h1>
-		
-           <form  action="buscarFuncionarioServlet" method="get">  
+		<h1 class="titulo-formulario">Consulta de Produto</h1>
+		<form action="buscarProdutoServlet" method="get">
 			<div class="row">
 				<div class="col-sm-3">
 					<div class="grupo-entrada">
-						<input placeholder="Digite o Nome ou CPF aqui " type="text"
+						<input placeholder="Digite o Nome ou codigo aqui " type="text"
 							class="campo" required name="Busca">
 					</div>
 				</div>
@@ -41,38 +40,39 @@
 				</div>
 			</div>
 		</form>
-	</div>
+	</div>	
 	<table class="tabela">
-		<tr>
-			<th>Id</th>
-			<th>Nome</th>
-			<th>Cpf</th>
-			<th>Email</th>
-			<th>Cargo</th>
-			<th>filial</th>
-			<th>Departamento</th>
-			<th>Editar</th>
-			<th>Excluir</th>
-		</tr>
-
-		<c:forEach var="f" items="${funcionarios}">
+		<thead>
 			<tr>
-				<td>${f.id}</td>
-				<td>${f.nome}</td>
-				<td>${f.cpf}</td>
-				<td>${f.email}</td>
-				<td>${f.cargo}</td>
-				<td>${f.filial}</td>
-				<td>${f.departamento}</td>
-				<td><a href=funcionarioServlet?acao=Editar&id=${f.id}>Editar</a></td>
-				<td><a href=gerenciarFuncionarioServlet?acao=Excluir&id=${f.id}>Excluir</a></td>
+				<th>Codigo</th>
+				<th>Produto</th>
+				<th>preco</th>
+				<th>quantitade</th>
+				<th>categoria</th>
+				<th>Editar</th>
+				<th>Excluir</th>
+			</tr>
+		</thead>
+		<tbody>
+			<c:forEach var="p" items="${listaProduto}">
+			<tr>
+				<td>${p.id}</td>
+				<td>${p.nome}</td>
+				<td>${p.preco}</td>
+				<td>${p.quantidade}</td>
+				<td>${p.categoria}</td>
+				<td><a href=produtoServlet?acao=Editar&id=${p.id}>Editar</a></td>
+				<td><a href=gerenciarProdutoServlet?acao=Excluir&id=${p.id}>Excluir</a></td>
 			</tr>
 		</c:forEach>
+		</tbody>
 	</table>
+
 	<footer class="layout-rodape">
 		<div class="container">
 			<p>&copy; Muchachos. Todos os direitos reservados.</p>
 		</div>
 	</footer>
+
 </body>
 </html>

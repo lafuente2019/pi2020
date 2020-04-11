@@ -5,11 +5,8 @@
 <html lang="pt-BR">
 <head>
 <meta charset="utf-8">
-<link rel="stylesheet" href="css/estilo.css">
 <link rel="shortcut icon" href="imagem/muchachos.png">
 <link rel="stylesheet" href="css/estilobootstrap.css">
-<link rel="stylesheet" href="css/base.css">
-<link rel="stylesheet" href="css/layout.css">
 <link rel="stylesheet" href="css/componentes.css">
 
 </head>

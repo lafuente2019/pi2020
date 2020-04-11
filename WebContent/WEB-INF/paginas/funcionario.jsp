@@ -1,6 +1,3 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -9,14 +6,12 @@
 <title>Muchachos</title>
 <link rel="shortcut icon" href="imagem/muchachos.png">
 <link rel="stylesheet" href="css/estilobootstrap.css">
-<link rel="stylesheet" href="css/base.css">
-<link rel="stylesheet" href="css/layout.css">
 <link rel="stylesheet" href="css/componentes.css">
 </head>
 <body>
 	<header class="layout-cabecalho">
 		<div class="container">
-			<nav class="navegacao  ">
+			<nav class="navegacao">
 				<a href="index.html"><img src="imagem/muchachos.png"
 					title="HOME" width="60" height="60" alt="Muchachos" /></a>
 			</nav>
@@ -24,32 +19,40 @@
 	</header>
 	
 	<div class="container">
-		<form action="funcionarioServlet" method="post">
+	 <form action="funcionarioServlet" method="post">
+          
               <h1 class="titulo-formulario">${mensagem}</h1>
-			<h1 class="titulo-formulario">Cadastro de colaborador</h1>
-			<div class="row">
-				<div class="col-sm-3">
-					<div class="grupo-entrada">
-						<label for="nome">Nome</label>
-						 <input id="nome" name="nome" type="text" class="campo" required >
-					</div>
-				</div>
-				<div class="col-sm-3">
-					<div class="grupo-entrada">
-						<label for="email">Email</label>
-						 <input id="email" name="email" type="email" class="campo" required>
-					</div>
-				</div>
-			</div>
+	     	<h1 class="titulo-formulario">Cadastro de Funcionario</h1> 
+       
+
+		<div class="grupo-entrada">
+		  <label for="id">ID</label>
+			<input id="id" name="id" disabled type="text" class="campo" required  >
+		</div>
 
 			<div class="row">
-				<div class="col-sm-3">
+		       <div class="col-sm-6">
+			   <div class="grupo-entrada">
+		   		 <label for="nome">Nome</label>
+				 <input id="nome" name="nome" type="text" class="campo" required >
+   			   </div>
+			  </div>
+			   <div class="col-sm-6">
+			   <div class="grupo-entrada">
+		         <label for="email">Email</label>
+				 <input id="email" name="email" type="email" class="campo" required>
+		   	      </div>
+		   	     </div>
+		   	    </div>
+
+			<div class="row">
+				<div class="col-sm-6">
 					<div class="grupo-entrada">
 						<label for="telefone">Telefone</label> 
 						<input id="telefone" name="telefone" type="text" class="campo" required >
 					</div>
 				</div>
-				<div class="col-sm-3">
+				<div class="col-sm-6">
 					<div class="grupo-entrada">
 						<label for="senha">Senha</label>
 						 <input id="senha" name="senha"  type="password" class="campo" >
@@ -58,13 +61,13 @@
 			</div>
 
 			<div class="row">
-				<div class="col-sm-3">
+				<div class="col-sm-6">
 					<div class="grupo-entrada">
 						<label for="cpf">CPF</label> 
 						<input id="cpf" name="cpf" type="text" class="campo" placeholder="###.###.###-##" required >
 					</div>
 				</div>
-				<div class="col-sm-3">
+				<div class="col-sm-6">
 					<div class="grupo-entrada">
 						<label for="cargo">Cargo</label> 
 						<select id="cargo" name="cargo" class="campo">
@@ -78,13 +81,13 @@
 			</div>
 
 			<div class="row">
-				<div class="col-sm-3">
+				<div class="col-sm-6">
 					<div class="grupo-entrada">
 						<label for="rg">RG</label> 
 						<input id="rg" name="rg" type="text" class="campo" placeholder="##.###.###-#" required>
 					</div>
 				</div>
-				<div class="col-sm-3">
+				<div class="col-sm-6">
 					<div class="grupo-entrada">
 						<label for="filial">Filial</label> 
 						<select id="filial" name="filial" class="campo">
@@ -98,13 +101,13 @@
 			</div>
 
 			<div class="row">
-				<div class="col-sm-3">
+				<div class="col-sm-4">
 					<div class="grupo-entrada">
 						<label for="dataNascimento">Data de nascimento </label>
 						 <input name="dataNascimento"id="dataNascimento" type="date" class="campo" required >
 					</div>
 				</div>
-				<div class="col-sm-3">
+				<div class="col-sm-4">
 					<div class="grupo-entrada">
 						<label for="sexo">Sexo</label> 
 						<select id="sexo" name="sexo" class="campo">
@@ -114,9 +117,8 @@
 						</select>
 					</div>
 				</div>
-			</div>
-
-			<div class="grupo-entrada">
+				<div class="col-sm-4">
+				 <div class="grupo-entrada">
 				<label for="departamento">Depto</label>
 				 <select id="departamento" name="departamento" class="campo" >
 					<option>Selecione</option>
@@ -125,21 +127,24 @@
 					<option value="ADM">Administração</option>
 					<option value="TI">TI</option>
 				</select>
-			</div>
+			  </div>	
+		     </div>
+		    </div>
+
 			<div class="row">
-				<div class="col-sm-3">
+				<div class="col-sm-4">
 					<div class="grupo-entrada">
 						<label>Logradouro</label> 
 						<input type="text" name="logradouro" class="campo" required >
 					</div>
 				</div>
-				<div class="col-sm-3">
+				<div class="col-sm-4">
 					<div class="grupo-entrada">
 						<label>Numero</label> 
 						<input type="text" name="numero" class="campo" required>
 					</div>
 				</div>
-				<div class="col-sm-3">
+				<div class="col-sm-4">
 					<div class="grupo-entrada">
 						<label for="complemento">Complemento</label> 
 						<input id="complemento" name="complemento" type="text" class="campo" required >
@@ -148,13 +153,13 @@
 			</div>
 
 			<div class="row">
-				<div class="col-sm-3">
+				<div class="col-sm-6">
 					<div class="grupo-entrada">
 						<label>Bairro</label>
 						 <input type="text" name="bairro" class="campo">
 					</div>
 				</div>
-				<div class="col-sm-3">
+				<div class="col-sm-6">
 					<div class="grupo-entrada">
 						<label for="estado">Estado</label> 
 						<select id="estado" name="estado" class="campo">
@@ -167,13 +172,13 @@
 				</div>
 			</div>
 			 <div class="row">
-			  <div class="col-sm-3">
+			  <div class="col-sm-6">
 		      	<div class="grupo-entrada">
 				<label for="cidade">Cidade</label> 
 			   <input id="cidade" name="cidade" type="text" class="campo" required >
 			</div>
 			  </div>
-				<div class="col-sm-3">
+				<div class="col-sm-6">
 					<div class="grupo-entrada">
 						<label for="estadoCivil">Estado civil</label> 
 						<select id="estadoCivil" name="estadoCivil" class="campo">
@@ -185,6 +190,7 @@
 					</div>
 				</div>
 			</div>
+			
 			<div class="row">
 				<div class="col-sm-3">
 					<div class="grupo-entrada">
@@ -200,7 +206,7 @@
 						</div>
 					</div>
 				</div>
-				</div>
+			</div>
 		</form>
 	  </div>
 

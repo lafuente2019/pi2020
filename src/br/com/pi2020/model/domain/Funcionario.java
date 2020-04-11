@@ -19,7 +19,8 @@ public class Funcionario extends Pessoa {
 		this.filial = filial;
 		this.departamento = departamento;
 	}
-	
+
+
 	public Funcionario(Integer id, String nome, String cpf, String email, String cargo, String filial,
 			String departamento) {
 		super(id, nome, cpf, email);
@@ -27,6 +28,7 @@ public class Funcionario extends Pessoa {
 		this.filial = filial;
 		this.departamento = departamento;
 	}
+
 
 	public String getSenha() {
 		return senha;
@@ -66,5 +68,7 @@ public class Funcionario extends Pessoa {
 	public void setDepartamento(String departamento) {
 		this.departamento = departamento;
 	}
-
+	
+	
+	
 }

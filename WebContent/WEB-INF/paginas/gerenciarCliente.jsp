@@ -22,9 +22,9 @@
 
 	<div class="container">
 		<h1 class="titulo-formulario">${mensagem}</h1>
-		<h1 class="titulo-formulario">Gerenciamento de colaborador</h1>
+		<h1 class="titulo-formulario">Gerenciamento de Cliente</h1>
 		
-           <form  action="buscarFuncionarioServlet" method="get">  
+           <form  action="buscarClienteServlet" method="get">  
 			<div class="row">
 				<div class="col-sm-3">
 					<div class="grupo-entrada">
@@ -42,30 +42,28 @@
 			</div>
 		</form>
 	</div>
-	<table class="tabela">
+	 <table class="tabela">
 		<tr>
-			<th>Id</th>
+			<th>IdCliente</th>
 			<th>Nome</th>
 			<th>Cpf</th>
-			<th>Email</th>
-			<th>Cargo</th>
-			<th>filial</th>
-			<th>Departamento</th>
+			<th>telefone</th>
+			<th>email</th>
+			<th>Situação</th>
 			<th>Editar</th>
 			<th>Excluir</th>
 		</tr>
 
-		<c:forEach var="f" items="${funcionarios}">
+		<c:forEach var="c" items="${clientes}">
 			<tr>
-				<td>${f.id}</td>
-				<td>${f.nome}</td>
-				<td>${f.cpf}</td>
-				<td>${f.email}</td>
-				<td>${f.cargo}</td>
-				<td>${f.filial}</td>
-				<td>${f.departamento}</td>
-				<td><a href=funcionarioServlet?acao=Editar&id=${f.id}>Editar</a></td>
-				<td><a href=gerenciarFuncionarioServlet?acao=Excluir&id=${f.id}>Excluir</a></td>
+				<td>${c.id}</td>
+				<td>${c.nome}</td>
+				<td>${c.cpf}</td>
+				<td>${c.telefone}</td>
+				<td>${c.email}</td>
+				<td>${c.situacao}</td>
+				<td><a href=clienteServlet?acao=Editar&id=${c.id}>Editar</a></td>
+				<td><a href=gerenciarClienteServlet?acao=Excluir&id=${c.id}>Excluir</a></td>
 			</tr>
 		</c:forEach>
 	</table>

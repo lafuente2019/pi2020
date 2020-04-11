@@ -10,44 +10,44 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import br.com.pi2020.control.model.dao.FuncionarioDao;
-import br.com.pi2020.model.domain.Funcionario;
+import br.com.pi2020.control.model.dao.ClienteDao;
+import br.com.pi2020.model.domain.Cliente;
 
 
-@WebServlet("/funcionarioServlet")
-public class FuncionarioServlet extends HttpServlet {
+
+@WebServlet("/clienteServlet")
+public class ClienteServlet extends HttpServlet {
 	
-	
+	 
 	private static final long serialVersionUID = 1L;
-	private FuncionarioDao funcionarioDao = new FuncionarioDao();
-	
+	private ClienteDao clienteDao = new ClienteDao();
+	 
 	
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String acao = request.getParameter("acao");
-		String id = request.getParameter("id");
+		String id = request.getParameter("id"); 
 		try {
 			if(acao != null && acao.equals("Editar")) {
-				Integer cod = Integer.parseInt(id);
-			    Funcionario funcionario = funcionarioDao.getFuncionarioId(cod);
-			    request.setAttribute("funcionario", funcionario);
-			}
-			request.setAttribute("funcionarios", funcionarioDao.getFuncionario());	
+				Integer cod = Integer.parseInt(id); 
+			    Cliente cliente = clienteDao.getClienteId(cod); 
+			    request.setAttribute("cliente", cliente);
+			} 
+			request.setAttribute("clientes", clienteDao.getCliente());	 
 			
 		} catch (SQLException e) {
 			request.setAttribute("mensagem", "Erro de banco de dados: " + e.getMessage());
-			
 	   }catch (ClassNotFoundException e) {
 			
-			request.setAttribute("mensagem", "Erro de Driver: " + e.getMessage());
+			request.setAttribute("mensagem", "Erro de Driver: " + e.getMessage()); 
 	   }
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/paginas/editarFuncionario.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/paginas/editarCliente.jsp"); 
 		dispatcher.forward(request, response);
-	}
+	} 
 
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		 
+		
 		
 		String nome = request.getParameter("nome");
 		String cpf = request.getParameter("cpf");
@@ -63,45 +63,45 @@ public class FuncionarioServlet extends HttpServlet {
 		String complemento = request.getParameter("complemento");
 		String telefone = request.getParameter("telefone");
 		String email = request.getParameter("email");
-		String senha = request.getParameter("senha");
-		String cargo = request.getParameter("cargo");
-		String filial = request.getParameter("filial");
-		String departamento = request.getParameter("departamento");
+		String situacao = request.getParameter("situacao");
 		String id = request.getParameter("id");
-		Funcionario funcionario = new Funcionario(null,nome, cpf, rg, sexo, estadoCivil, dataNascimento,
-				estado, cidade, bairro, logradouro, numero, complemento, telefone, email, senha, cargo, filial, departamento);
+		Cliente cliente = new Cliente(null,nome, cpf, rg, sexo, estadoCivil, dataNascimento,
+				estado, cidade, bairro, logradouro, numero, complemento, telefone, email, situacao);
 		if(id != null && !id.equals("")) {
-			funcionario.setId(Integer.parseInt(id));
+			cliente.setId(Integer.parseInt(id));
 		}
 		try {
-			if(funcionario.getId() != null) {
-				 funcionarioDao.atualizar(funcionario);
-				 request.setAttribute("mensagem","Funcionario atualizado com sucesso!!!");
+			if(cliente.getId() != null) {
+				 clienteDao.atualizar(cliente);
+				 request.setAttribute("mensagem","Cliente atualizado com sucesso!!!");
 			}else {
-			 funcionarioDao.salvar(funcionario);
-			 request.setAttribute("mensagem","Funcionario salvo com sucesso!!!");
+			 clienteDao.salvar(cliente);
+			 request.setAttribute("mensagem","Cliente salvo com sucesso!!!");
 		  }
 		} catch (SQLException e) {
 			request.setAttribute("mensagem", "Erro de banco de dados: " + e.getMessage());
-			 request.setAttribute("funcionario", funcionario);
+			 request.setAttribute("cliente", cliente);
+			 System.out.println("oii");
 	    }catch (ClassNotFoundException e) {
 			request.setAttribute("mensagem", "Erro de Driver: " + e.getMessage());
-			 request.setAttribute("funcionario", funcionario);
+			 request.setAttribute("cliente", cliente);
 	   }
 		try {
-		  request.setAttribute("funcionario", funcionarioDao.getFuncionario());
+		  request.setAttribute("cliente", clienteDao.getCliente());
 	   } catch (SQLException e) {
 		   
 			request.setAttribute("mensagem", "Erro de banco de dados: " + e.getMessage());
-			 request.setAttribute("funcionario", funcionario);
+			 request.setAttribute("cliente", cliente);
 			 
 	    }catch (ClassNotFoundException e) {
 	    	
 			request.setAttribute("mensagem", "Erro de Driver: " + e.getMessage());
-			 request.setAttribute("funcionario", funcionario);
+			 request.setAttribute("cliente", cliente);
 	    }
-		RequestDispatcher dispatcher = request.getRequestDispatcher("//WEB-INF/paginas/funcionario.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("//WEB-INF/paginas/cliente.jsp");
 		dispatcher.forward(request, response);
 		
 	   }
 }
+
+
