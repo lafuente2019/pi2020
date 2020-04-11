@@ -65,12 +65,15 @@
 					name="quantidade" type="text" class="campo" required>
 			</div>
 
-			<div class="grupo-entrada">
+          
+           <div class="row">
+             <div class="col-sm-10">
+			  <div class="grupo-entrada">
 				<label for="descricao">Descrição</label>
-				<textarea  name="descricao"  cols="50" rows="5"></textarea>
-			</div>
-
-
+				<textarea  name="descricao"  class="campo" required ></textarea>
+		     </div>
+             </div>
+           </div>
 			<div class="grupo-entrada">
 				<label for="categotia">Categoria</label> <select id="categotia"
 					name="categoria" class="campo">

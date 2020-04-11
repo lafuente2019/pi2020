@@ -30,7 +30,7 @@ public class ClienteDao {
 					rs.getString(15), rs.getString(16)));
 		}
   
-		return clientes; 
+		return clientes;  
 	} 
 	 
  
@@ -41,7 +41,7 @@ public class ClienteDao {
 						+ " numero,complemento, telefone,email, situacao)"
 						+ " values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
 
-		statement.setString(1, cliente.getNome());
+		statement.setString(1, cliente.getNome()); 
 		statement.setString(2, cliente.getCpf());
 		statement.setString(3, cliente.getRg());
 		statement.setString(4, cliente.getSexo());
@@ -50,7 +50,7 @@ public class ClienteDao {
 		statement.setString(7, cliente.getEstado());
 		statement.setString(8, cliente.getCidade());
 		statement.setString(9, cliente.getBairro());
-		statement.setString(10, cliente.getLogradouro());
+		statement.setString(10, cliente.getLogradouro()); 
 		statement.setInt(11, cliente.getNumero());
 		statement.setString(12, cliente.getComplemento());
 		statement.setString(13, cliente.getTelefone());
@@ -133,8 +133,8 @@ public class ClienteDao {
 	}	
   
 	      public static List<Cliente> buscar(String busca)throws SQLException, Exception {
-	    	  String sql = "SELECT * FROM cadastroCliente WHERE idCliente like ? or nome like ? or cpf like ? or telefone like ? or email like ? or situacao like ?";
-		  busca = '%' +busca+ '%';
+	    	  String sql = "SELECT idCliente,nome,cpf,telefone,email,situacao FROM cadastroCliente WHERE idCliente like ? or nome like ? or cpf like ?";
+		  busca = '%'+busca+'%';
 		  
 		  List <Cliente> listaCliente = null;
 		  
@@ -150,10 +150,6 @@ public class ClienteDao {
 			ps.setString(1, busca);
 			ps.setString(2, busca);
 			ps.setString(3, busca);
-			ps.setString(4, busca);
-			ps.setString(5, busca);
-			ps.setString(6, busca);
-			 
 			
 			rs = ps.executeQuery();
 			

@@ -32,11 +32,25 @@
             <div class="grupo-entrada">
 				 <input type="hidden" name="id"  value="${funcionario.id}">
 			</div>
-			<div class="grupo-entrada">
-				<label for="id">ID</label>
-				 <input id="id" name="id" type="text" disabled  value="${funcionario.id}" class="campo">
-			</div>
 			<div class="row">
+         <div class="col-sm-10">
+	      <div class="grupo-entrada">
+		    <label for="id">ID</label>
+		 	<input id="id" name="id" disabled type="text" class="campo" required  >
+	      </div>
+	    </div>
+		<div class="col-sm-2">
+		  <div class="grupo-entrada">
+		   <label for="situacao">Status</label> 
+			  <select id="situacao" name="situacao" class="campo">
+	   		 	<option value="${funcionario.situacao}">${funcionario.situacao}</option>
+			   	 <option value="Ativo">Ativo</option>
+			  	 <option value="Inativo">Inativo</option>
+		 	  </select>
+		     </div>
+		    </div>
+		   </div>
+		   <div class="row">
 				<div class="col-sm-6">
 					<div class="grupo-entrada">
 						<label for="nome">Nome</label>

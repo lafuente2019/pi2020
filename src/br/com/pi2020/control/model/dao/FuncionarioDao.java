@@ -16,28 +16,27 @@ public class FuncionarioDao {
 		Connection conexao = conexaoJDBCFactory.getConexao();
 		PreparedStatement ps = conexao.prepareStatement("SELECT id, nome, Cpf, Rg, Sexo,"
 				+ "estadoCivil, dataNascimento, Estado, Cidade, bairro, Logradouro, Numero,complemento, Telefone,"
-				+ "Email, Senha, Cargo, Filial, Departamento FROM cadastroFuncionario");
+				+ "Email,situacao, Senha, Cargo, Filial, Departamento FROM cadastroFuncionario");
 
 		ResultSet rs = ps.executeQuery();
-		List<Funcionario> funcionarios = new ArrayList<>();
-
+		List<Funcionario> funcionarios = new ArrayList<>(); 
 		while (rs.next()) {
 			funcionarios.add(new Funcionario(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4),
 					rs.getString(5), rs.getString(6), rs.getString(7), rs.getString(8), rs.getString(9),
 					rs.getString(10), rs.getString(11), rs.getInt(12), rs.getString(13), rs.getString(14),
-					rs.getString(15), rs.getString(16), rs.getString(17), rs.getString(18), rs.getString(19)));
+					rs.getString(15), rs.getString(16), rs.getString(17), rs.getString(18), rs.getString(19),rs.getString(20)));
 		}
 
 		return funcionarios;
 	}
-	    
+	     
 
 	public void salvar(Funcionario funcionario) throws ClassNotFoundException, SQLException {
 		Connection conexao = conexaoJDBCFactory.getConexao();
 		PreparedStatement statement = conexao.prepareStatement(
 				" insert into cadastroFuncionario(nome, cpf, rg, sexo, estadoCivil, dataNascimento, estado, cidade, bairro,  logradouro,"
-						+ " numero,complemento, telefone,email, senha, cargo, filial, departamento)"
-						+ " values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
+						+ " numero,complemento, telefone,email,situacao, senha, cargo, filial, departamento)"
+						+ " values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
 
 		statement.setString(1, funcionario.getNome());  
 		statement.setString(2, funcionario.getCpf());
@@ -53,16 +52,17 @@ public class FuncionarioDao {
 		statement.setString(12, funcionario.getComplemento());
 		statement.setString(13, funcionario.getTelefone());
 		statement.setString(14, funcionario.getEmail());
-		statement.setString(15, funcionario.getSenha());
-		statement.setString(16, funcionario.getCargo());
-		statement.setString(17, funcionario.getFilial());
-		statement.setString(18, funcionario.getDepartamento());
+		statement.setString(15, funcionario.getSituacao());
+		statement.setString(16, funcionario.getSenha());
+		statement.setString(17, funcionario.getCargo());
+		statement.setString(18, funcionario.getFilial());
+		statement.setString(19, funcionario.getDepartamento());
 		statement.execute();
 	}
 	
 	public List<Funcionario> getFuncionario1() throws SQLException, ClassNotFoundException {
     Connection conexao = conexaoJDBCFactory.getConexao();
-    PreparedStatement ps = conexao.prepareStatement("Select id, nome, cpf, email, cargo, "
+    PreparedStatement ps = conexao.prepareStatement("Select id, nome, cpf, situacao, cargo, "
     		+ "filial , departamento from cadastroFuncionario");
     
     ResultSet rs = ps.executeQuery();
@@ -92,7 +92,7 @@ public class FuncionarioDao {
 		Connection conexao = conexaoJDBCFactory.getConexao();
 		PreparedStatement ps = conexao.prepareStatement("SELECT id, nome, Cpf, Rg, Sexo,"
 				+ "estadoCivil, dataNascimento, Estado, Cidade, bairro, Logradouro, Numero,complemento, Telefone,"
-				+ "Email, Senha, Cargo, Filial, Departamento FROM cadastroFuncionario WHERE id=?");
+				+ "Email,situacao, Senha, Cargo, Filial, Departamento FROM cadastroFuncionario WHERE id=?");
         ps.setInt(1, cod);
 		ResultSet rs =  ps.executeQuery();
 		
@@ -100,7 +100,7 @@ public class FuncionarioDao {
 		         return new Funcionario(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4),
 					rs.getString(5), rs.getString(6), rs.getString(7), rs.getString(8), rs.getString(9),
 					rs.getString(10), rs.getString(11), rs.getInt(12), rs.getString(13), rs.getString(14),
-			        rs.getString(15), rs.getString(16), rs.getString(17), rs.getString(18), rs.getString(19));
+			        rs.getString(15), rs.getString(16), rs.getString(17), rs.getString(18), rs.getString(19),rs.getString(20));
 		}
 
 		throw new SQLException("Codigo não encontrado: " +cod);
@@ -111,7 +111,7 @@ public class FuncionarioDao {
 		Connection conexao = conexaoJDBCFactory.getConexao();
 		PreparedStatement statement = conexao.prepareStatement(
 				" UPDATE cadastroFuncionario SET nome=?, cpf=?, rg=?, sexo=?, estadoCivil=?, dataNascimento=?, estado=?, cidade=?, bairro=?,  logradouro=?,"
-						+ " numero=?,complemento=?, telefone=?,email=?, senha=?, cargo=?, filial=?, departamento=? WHERE id=?");
+						+ " numero=?,complemento=?, telefone=?,email=?,situacao=?, senha=?, cargo=?, filial=?, departamento=? WHERE id=?");
 
 		statement.setString(1, funcionario.getNome());
 		statement.setString(2, funcionario.getCpf());
@@ -127,18 +127,19 @@ public class FuncionarioDao {
 		statement.setString(12, funcionario.getComplemento());
 		statement.setString(13, funcionario.getTelefone());
 		statement.setString(14, funcionario.getEmail());
-		statement.setString(15, funcionario.getSenha());
-		statement.setString(16, funcionario.getCargo());
-		statement.setString(17, funcionario.getFilial());
-		statement.setString(18, funcionario.getDepartamento());
-		statement.setInt(19, funcionario.getId());
+		statement.setString(15, funcionario.getSituacao());
+		statement.setString(16, funcionario.getSenha());
+		statement.setString(17, funcionario.getCargo());
+		statement.setString(18, funcionario.getFilial());
+		statement.setString(19, funcionario.getDepartamento());
+		statement.setInt(20, funcionario.getId());
 		statement.execute();
 		
 	}	
   
 	      public static List<Funcionario> buscar(String busca)throws SQLException, Exception {
 		  String sql = "SELECT * FROM cadastroFuncionario WHERE id like ? or nome like ? or cpf like ? \n"
-		  		+ " or email like ? or cargo like ? or filial like ? or departamento like ? ";
+		  		+ " or situacao like ? or cargo like ? or filial like ? or departamento like ? ";
 		  busca = '%' +busca+ '%';
 		  
 		  List <Funcionario> listaFuncionario = null;
@@ -170,12 +171,12 @@ public class FuncionarioDao {
 				int id = rs.getInt("id");
 				String nome = rs.getString("nome");
 				String cpf = rs.getString("cpf");
-				String email = rs.getString("email");
+				String situacao = rs.getString("situacao");
 				String cargo = rs.getString("cargo");
 				String filial = rs.getString("filial");
 				String departamento = rs.getString("departamento");
 				
-				Funcionario F = new Funcionario(id,nome,cpf,email,cargo,filial,departamento);
+				Funcionario F = new Funcionario(id,nome,cpf,situacao,cargo,filial,departamento);
 				listaFuncionario.add(F);
 			}
 			

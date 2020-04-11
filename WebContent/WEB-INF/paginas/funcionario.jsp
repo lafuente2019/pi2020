@@ -24,11 +24,24 @@
               <h1 class="titulo-formulario">${mensagem}</h1>
 	     	<h1 class="titulo-formulario">Cadastro de Funcionario</h1> 
        
-
-		<div class="grupo-entrada">
-		  <label for="id">ID</label>
-			<input id="id" name="id" disabled type="text" class="campo" required  >
-		</div>
+       <div class="row">
+         <div class="col-sm-10">
+	      <div class="grupo-entrada">
+		    <label for="id">ID</label>
+		 	<input id="id" name="id" disabled type="text" class="campo" required  >
+	      </div>
+	    </div>
+		<div class="col-sm-2">
+		  <div class="grupo-entrada">
+		   <label for="situacao">Status</label> 
+			  <select id="situacao" name="situacao" class="campo">
+	   		 	<option>Selecione</option>
+			   	 <option value="Ativo">Ativo</option>
+			  	 <option value="Inativo">Inativo</option>
+		 	  </select>
+		     </div>
+		    </div>
+		   </div>
 
 			<div class="row">
 		       <div class="col-sm-6">

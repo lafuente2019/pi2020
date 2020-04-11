@@ -33,44 +33,42 @@
 			</div>
 			
              <div class="row">
-		      <div class="col-sm-12">
-		        <div class="grupo-entrada">
-		          <label for="id">ID</label>
-		          <input id="id" name="id" disabled type="text" class="campo" value="${cliente.id}" required>
-		         </div>
-                </div>
-			  </div>
+         <div class="col-sm-10">
+	      <div class="grupo-entrada">
+		    <label for="id">ID</label>
+		 	<input id="id" name="id" disabled type="text" class="campo" required  >
+	      </div>
+	    </div>
+		<div class="col-sm-2">
+		  <div class="grupo-entrada">
+		   <label for="situacao">Status</label> 
+			  <select id="situacao" name="situacao" class="campo">
+	   		 	<option>Selecione</option>
+			   	 <option value="Ativo">Ativo</option>
+			  	 <option value="Inativo">Inativo</option>
+		 	  </select>
+		     </div>
+		    </div>
+		   </div>
 
               <div class="row">
-		       <div class="col-sm-4">
+		       <div class="col-sm-6">
+			     <div class="grupo-entrada">
+		   		  <label for="nome">Nome</label>
+				   <input id="nome" name="nome" type="text" class="campo" value="${cliente.nome}" required >
+   			      </div>
+			     </div>
+			   <div class="col-sm-6">
+			     <div class="grupo-entrada">
+		          <label for="email">Email</label>
+				  <input id="email" name="email" type="email" class="campo" value="${cliente.email}" required>
+		   	     </div>
+		   	     </div>
+		   	   </div>
+		   	 
 			   <div class="grupo-entrada">
-		   		 <label for="nome">Nome</label>
-				 <input id="nome" name="nome" type="text" class="campo" value="${cliente.nome}" required >
-   			   </div>
-			  </div>
-			   <div class="col-sm-4">
-			   <div class="grupo-entrada">
-		         <label for="email">Email</label>
-				 <input id="email" name="email" type="email" class="campo" value="${cliente.email}" required>
-		   	   </div>
-		   	   </div>
-		   	    <div class="col-sm-4">
-		   	     <div class="grupo-entrada">
-				 <label for="situacao">Status</label> 
-					<select id="situacao" name="situacao" class="campo">
-	   				 <option selected value="${cliente.situacao}">${cliente.situacao}</option>
-				   	 <option value="Ativo">Ativo</option>
-				  	 <option value="Inativo">Inativo</option>
-					</select>
-		   		 </div>
-		   	   </div>
-		   	   </div>
-		   	   
-			
-			
-			   <div class="grupo-entrada">
-				<label for="telefone">Telefone</label> 
-				<input id="telefone" name="telefone" type="text" class="campo" value="${cliente.telefone}" required>
+				  <label for="telefone">Telefone</label> 
+				  <input id="telefone" name="telefone" type="text" class="campo" value="${cliente.telefone}" required>
 	           </div>
 
 			   <div class="grupo-entrada">

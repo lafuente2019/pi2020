@@ -18,6 +18,7 @@ CREATE TABLE cadastroFuncionario (
     bairro VARCHAR(255),
     telefone VARCHAR(255) NOT NULL,
     email VARCHAR(255) NOT NULL,
+    situacao VARCHAR(30),
     senha VARCHAR(255) NOT NULL,
     cargo VARCHAR(255),
     filial VARCHAR(255),
@@ -26,7 +27,7 @@ CREATE TABLE cadastroFuncionario (
     ) default charset = utf8;
     
 insert into cadastroFuncionario values (
-default,'JOÃO','257.797.738-25', '37.167.165-5', 'Masculino', 'casado', '10/09/1985', 'São Paulo', 'SP', 'Rua jamil jorge daniel', 171 , 'CASA C','pedreira', '5615-2068', 'valterlafuente@yahoo.com.br','19202122','Gerente', 'São Paulo', 'vendas');
+default,'JOÃO','257.797.738-25', '37.167.165-5', 'Masculino', 'casado', '10/09/1985', 'São Paulo', 'SP', 'Rua jamil jorge daniel', 171 , 'CASA C','pedreira', '5615-2068', 'valterlafuente@yahoo.com.br','Ativo','19202122','Gerente', 'São Paulo', 'vendas');
 select * from cadastrofuncionario;
 
 

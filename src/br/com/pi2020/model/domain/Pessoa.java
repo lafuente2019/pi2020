@@ -16,6 +16,7 @@ public class Pessoa {
 	private String complemento;
 	private String telefone;
 	private String email;
+	private String situacao;
 	
 	
 	public Pessoa() {
@@ -24,7 +25,33 @@ public class Pessoa {
 
 	public Pessoa(Integer id, String nome, String cpf, String rg, String sexo, String estadoCivil,
 			String dataNascimento, String estado, String cidade, String bairro, String logradouro, int numero,
+			String complemento, String telefone, String email, String situacao) {
+		
+		this.id = id;
+		this.nome = nome;
+		this.cpf = cpf;
+		this.rg = rg;
+		this.sexo = sexo;
+		this.estadoCivil = estadoCivil;
+		this.dataNascimento = dataNascimento;
+		this.estado = estado;
+		this.cidade = cidade;
+		this.bairro = bairro;
+		this.logradouro = logradouro;
+		this.numero = numero;
+		this.complemento = complemento;
+		this.telefone = telefone;
+		this.email = email;
+		this.situacao = situacao;
+	}
+
+    
+
+
+	public Pessoa(Integer id, String nome, String cpf, String rg, String sexo, String estadoCivil,
+			String dataNascimento, String estado, String cidade, String bairro, String logradouro, int numero,
 			String complemento, String telefone, String email) {
+	
 		this.id = id;
 		this.nome = nome;
 		this.cpf = cpf;
@@ -42,13 +69,11 @@ public class Pessoa {
 		this.email = email;
 	}
 
-
-
-	public Pessoa(Integer id, String nome, String cpf, String email) {
+	public Pessoa(Integer id, String nome, String cpf, String situacao) {
 		this.id = id;
 		this.nome = nome;
 		this.cpf = cpf;
-		this.email = email;
+		this.situacao = situacao;
 	}
 	
 	
@@ -179,6 +204,13 @@ public class Pessoa {
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+	public String getSituacao() {
+		return situacao;
+	}
+
+	public void setSituacao(String situacao) {
+		this.situacao = situacao;
 	}
 
 

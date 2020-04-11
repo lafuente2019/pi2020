@@ -28,7 +28,7 @@ public class FuncionarioServlet extends HttpServlet {
 		String id = request.getParameter("id");
 		try {
 			if(acao != null && acao.equals("Editar")) {
-				Integer cod = Integer.parseInt(id);
+				Integer cod = Integer.parseInt(id); 
 			    Funcionario funcionario = funcionarioDao.getFuncionarioId(cod);
 			    request.setAttribute("funcionario", funcionario);
 			}
@@ -63,13 +63,14 @@ public class FuncionarioServlet extends HttpServlet {
 		String complemento = request.getParameter("complemento");
 		String telefone = request.getParameter("telefone");
 		String email = request.getParameter("email");
+		String situacao = request.getParameter("situacao");
 		String senha = request.getParameter("senha");
 		String cargo = request.getParameter("cargo");
 		String filial = request.getParameter("filial");
 		String departamento = request.getParameter("departamento");
 		String id = request.getParameter("id");
 		Funcionario funcionario = new Funcionario(null,nome, cpf, rg, sexo, estadoCivil, dataNascimento,
-				estado, cidade, bairro, logradouro, numero, complemento, telefone, email, senha, cargo, filial, departamento);
+				estado, cidade, bairro, logradouro, numero, complemento, telefone, email,situacao, senha, cargo, filial, departamento);
 		if(id != null && !id.equals("")) {
 			funcionario.setId(Integer.parseInt(id));
 		}

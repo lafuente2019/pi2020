@@ -30,7 +30,7 @@ public class ClienteServlet extends HttpServlet {
 		try {
 			if(acao != null && acao.equals("Editar")) {
 				Integer cod = Integer.parseInt(id); 
-			    Cliente cliente = clienteDao.getClienteId(cod); 
+			    Cliente cliente = clienteDao.getClienteId(cod);  
 			    request.setAttribute("cliente", cliente);
 			} 
 			request.setAttribute("clientes", clienteDao.getCliente());	 

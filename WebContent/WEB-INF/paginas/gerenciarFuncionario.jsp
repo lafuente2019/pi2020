@@ -47,10 +47,10 @@
 			<th>Id</th>
 			<th>Nome</th>
 			<th>Cpf</th>
-			<th>Email</th>
+			<th>Departamento</th>
 			<th>Cargo</th>
 			<th>filial</th>
-			<th>Departamento</th>
+			<th>Situacao</th>
 			<th>Editar</th>
 			<th>Excluir</th>
 		</tr>
@@ -60,10 +60,10 @@
 				<td>${f.id}</td>
 				<td>${f.nome}</td>
 				<td>${f.cpf}</td>
-				<td>${f.email}</td>
+				<td>${f.departamento}</td>
 				<td>${f.cargo}</td>
 				<td>${f.filial}</td>
-				<td>${f.departamento}</td>
+				<td>${f.situacao}</td>
 				<td><a href=funcionarioServlet?acao=Editar&id=${f.id}>Editar</a></td>
 				<td><a href=gerenciarFuncionarioServlet?acao=Excluir&id=${f.id}>Excluir</a></td>
 			</tr>
