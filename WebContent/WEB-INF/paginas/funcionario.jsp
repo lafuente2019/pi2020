@@ -12,7 +12,7 @@
 	<header class="layout-cabecalho">
 		<div class="container">
 			<nav class="navegacao">
-				<a href="index.html"><img src="imagem/muchachos.png"
+				<a href="menu.jsp"><img src="imagem/muchachos.png"
 					title="HOME" width="60" height="60" alt="Muchachos" /></a>
 			</nav>
 		</div>

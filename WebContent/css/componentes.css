@@ -72,7 +72,7 @@ body {
 }
 
 /*--------------------*\
-  GRUPO-ENTRADA
+     GRUPO-ENTRADA
 \*--------------------*/
 .grupo-entrada {
   margin-bottom: 15px;
@@ -86,7 +86,7 @@ body {
 
 
 /*--------------------*\
-  CAMPO
+        CAMPO
 \*--------------------*/
 .campo {
   display: block;
@@ -173,3 +173,56 @@ body {
   margin-right: 100px;
   margin-top: 10px;
 }
+
+
+/*--------------------*\
+        Login
+\*--------------------*/
+
+.container-login{
+	
+	border: 2px solid red;
+	border-radius: 10px;
+	width: 300px;
+	height: 300px;
+	
+	position: absolute;
+	top:50%;
+	left:50%;
+
+	transform: translate(-50%, -50%)
+	
+}
+
+.img-login {
+margin-left: 35%;
+    	
+}
+#id{
+	padding: 20px:
+}
+
+.campo-login{
+  display: block;
+  width: 70%;
+  margin-left: 15%;
+  height: 2.8em;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+
+  background-color: #fff;
+
+  font-size: 1.4rem;
+}
+
+.label{
+	margin-left: 15%;
+}
+
+
+
+
+
+
+
