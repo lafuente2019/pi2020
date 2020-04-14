@@ -8,10 +8,18 @@ public class Funcionario extends Pessoa {
 	private String filial;
 	private String departamento;
 	
-	
- 
 
 	
+	
+	public Funcionario() {
+		super();
+	}
+   
+
+	public Funcionario(String email, String senha) {
+		super(email);
+		this.senha = senha;
+	}
 
 
 	public Funcionario(Integer id, String nome, String cpf, String rg, String sexo, String estadoCivil,
@@ -22,9 +30,9 @@ public class Funcionario extends Pessoa {
 				complemento, telefone, email, situacao);
 		this.senha = senha;
 		this.cargo = cargo;
-		this.filial = filial;
+		this.filial = filial; 
 		this.departamento = departamento;
-	}
+	} 
 
 
 	public Funcionario(Integer id, String nome, String cpf, String situacao, String cargo, String filial,

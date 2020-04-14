@@ -43,7 +43,7 @@ public class ClienteDao {
 
 		statement.setString(1, cliente.getNome()); 
 		statement.setString(2, cliente.getCpf());
-		statement.setString(3, cliente.getRg());
+		statement.setString(3, cliente.getRg()); 
 		statement.setString(4, cliente.getSexo());
 		statement.setString(5, cliente.getEstadoCivil()); 
 		statement.setString(6, cliente.getDataNascimento());
@@ -183,7 +183,7 @@ public class ClienteDao {
 				conexao.close();
 			}
 		}
-		  return listaCliente;
+		  return listaCliente;                                                                                                                                                                     
 	}  
 }
 

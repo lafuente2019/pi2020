@@ -31,10 +31,10 @@ public class GerenciarFuncionarioServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String acao = request.getParameter("acao");
+		String acao = request.getParameter("acao"); 
 		String id = request.getParameter("id");
 		try {
-			if(acao != null && acao.equals("Excluir")) { 
+			if(acao != null && acao.equals("Excluir")) {  
 				Integer cod = Integer.parseInt(id);
 				funcionarioDao.excluir(cod);
 				request.setAttribute("mensagem", "Funcionario Excluido com sucesso!!");

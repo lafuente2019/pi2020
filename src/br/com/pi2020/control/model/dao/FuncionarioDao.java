@@ -28,7 +28,7 @@ public class FuncionarioDao {
 		}
 
 		return funcionarios;
-	}
+	} 
 	     
 
 	public void salvar(Funcionario funcionario) throws ClassNotFoundException, SQLException {
@@ -39,10 +39,10 @@ public class FuncionarioDao {
 						+ " values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
 
 		statement.setString(1, funcionario.getNome());  
-		statement.setString(2, funcionario.getCpf());
+		statement.setString(2, funcionario.getCpf()); 
 		statement.setString(3, funcionario.getRg());
-		statement.setString(4, funcionario.getSexo());
-		statement.setString(5, funcionario.getEstadoCivil());
+		statement.setString(4, funcionario.getSexo()); 
+		statement.setString(5, funcionario.getEstadoCivil()); 
 		statement.setString(6, funcionario.getDataNascimento());
 		statement.setString(7, funcionario.getEstado());
 		statement.setString(8, funcionario.getCidade());
@@ -105,7 +105,7 @@ public class FuncionarioDao {
 
 		throw new SQLException("Codigo não encontrado: " +cod);
 	}
-
+ 
 
 	public void atualizar(Funcionario funcionario) throws ClassNotFoundException, SQLException  {
 		Connection conexao = conexaoJDBCFactory.getConexao();
@@ -195,7 +195,34 @@ public class FuncionarioDao {
 			}
 		}
 		  return listaFuncionario;
-	}  
+	} 
+	  public Funcionario validar(String email, String senha) throws ClassNotFoundException, SQLException {
+		  Funcionario funcionario = new Funcionario();
+		  PreparedStatement ps = null;
+		  Connection conexao = null;
+		  ResultSet rs = null;
+		  
+		  String sql = "SELECT * FROM cadastroFuncionario WHERE email = ? and senha = ?";
+		  try {
+			   conexao = conexaoJDBCFactory.getConexao();
+			   ps = conexao.prepareStatement(sql);
+			   ps.setString(1, email);
+			   ps.setString(2, senha);
+			   rs = ps.executeQuery();
+			   
+			   while(rs.next()) {
+				   
+				   funcionario.setEmail(rs.getString("email"));
+				   funcionario.setSenha(rs.getString("senha"));
+				   
+			   }
+			   
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.getMessage();
+		}
+		 return funcionario; 
+	  }
 }
 
 	

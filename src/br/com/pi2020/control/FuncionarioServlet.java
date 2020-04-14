@@ -19,7 +19,7 @@ public class FuncionarioServlet extends HttpServlet {
 	
 	
 	private static final long serialVersionUID = 1L;
-	private FuncionarioDao funcionarioDao = new FuncionarioDao();
+	private FuncionarioDao funcionarioDao = new FuncionarioDao(); 
 	
 	
 
@@ -31,7 +31,7 @@ public class FuncionarioServlet extends HttpServlet {
 				Integer cod = Integer.parseInt(id); 
 			    Funcionario funcionario = funcionarioDao.getFuncionarioId(cod);
 			    request.setAttribute("funcionario", funcionario);
-			}
+			} 
 			request.setAttribute("funcionarios", funcionarioDao.getFuncionario());	
 			
 		} catch (SQLException e) {

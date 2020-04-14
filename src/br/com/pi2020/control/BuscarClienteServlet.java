@@ -32,8 +32,9 @@ public class BuscarClienteServlet extends HttpServlet {
 			
 	   }
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/paginas/buscaCliente.jsp");
-		dispatcher.forward(request, response); 
+		dispatcher.forward(request, response);  
 	} 
 	
 
 } 
+ 

@@ -20,7 +20,7 @@ public class ClienteServlet extends HttpServlet {
 	
 	 
 	private static final long serialVersionUID = 1L;
-	private ClienteDao clienteDao = new ClienteDao();
+	private ClienteDao clienteDao = new ClienteDao(); 
 	 
 	
 
@@ -45,7 +45,7 @@ public class ClienteServlet extends HttpServlet {
 		dispatcher.forward(request, response);
 	} 
 
-	
+	 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		
@@ -98,7 +98,7 @@ public class ClienteServlet extends HttpServlet {
 			request.setAttribute("mensagem", "Erro de Driver: " + e.getMessage());
 			 request.setAttribute("cliente", cliente);
 	    }
-		RequestDispatcher dispatcher = request.getRequestDispatcher("//WEB-INF/paginas/cliente.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/paginas/cliente.jsp");
 		dispatcher.forward(request, response);
 		
 	   }
