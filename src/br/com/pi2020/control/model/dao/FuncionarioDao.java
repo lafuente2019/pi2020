@@ -140,7 +140,7 @@ public class FuncionarioDao {
 	      public static List<Funcionario> buscar(String busca)throws SQLException, Exception {
 		  String sql = "SELECT * FROM cadastroFuncionario WHERE id like ? or nome like ? or cpf like ? \n"
 		  		+ " or situacao like ? or cargo like ? or filial like ? or departamento like ? ";
-		  busca = '%' +busca+ '%';
+		  busca = busca+ '%';
 		  
 		  List <Funcionario> listaFuncionario = null;
 		  
@@ -195,25 +195,28 @@ public class FuncionarioDao {
 			}
 		}
 		  return listaFuncionario;
-	} 
-	  public Funcionario validar(String email, String senha) throws ClassNotFoundException, SQLException {
+	}
+	      
+	  public Funcionario validar(String nome, String senha) throws ClassNotFoundException, SQLException {
 		  Funcionario funcionario = new Funcionario();
 		  PreparedStatement ps = null;
 		  Connection conexao = null;
 		  ResultSet rs = null;
 		  
-		  String sql = "SELECT * FROM cadastroFuncionario WHERE email = ? and senha = ?";
+		  String sql = "SELECT * FROM cadastroFuncionario WHERE nome = ? and senha = ? ";
 		  try {
 			   conexao = conexaoJDBCFactory.getConexao();
 			   ps = conexao.prepareStatement(sql);
-			   ps.setString(1, email);
+			   ps.setString(1, nome);
 			   ps.setString(2, senha);
+			 
 			   rs = ps.executeQuery();
 			   
 			   while(rs.next()) {
 				   
-				   funcionario.setEmail(rs.getString("email"));
+				   funcionario.setNome(rs.getString("nome"));
 				   funcionario.setSenha(rs.getString("senha"));
+				  
 				   
 			   }
 			   

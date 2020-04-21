@@ -19,21 +19,18 @@ public class LoginServlet extends HttpServlet {
      private FuncionarioDao funcionarioDao = new FuncionarioDao();
      private Funcionario funcionario = new Funcionario();
    
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-	}
-
-	
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	 protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
  		String accion =  request.getParameter("accion");
  		if(accion.equalsIgnoreCase("Logar") ) {
- 			String email=request.getParameter("email");
- 			String senha = request.getParameter("senha");
+ 			String nome =request.getParameter("nome");
+  			String senha = request.getParameter("senha");
+
+ 			
  			try {
-				funcionario =  funcionarioDao.validar(email, senha);
-				if(funcionario.getEmail() != null && funcionario.getSenha() != null) {
+				funcionario =  funcionarioDao.validar(nome, senha);
+				if(funcionario.getNome() != null && funcionario.getSenha() != null) {
+					request.setAttribute("mensagem", "Bem vindo " + ", " + funcionario.getNome());
 					RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/paginas/menuu.jsp");
 				    dispatcher.forward(request, response);
 				}else {
@@ -42,11 +39,11 @@ public class LoginServlet extends HttpServlet {
 				    dispatcher.forward(request, response);
 				}
 			} catch (ClassNotFoundException | SQLException e) {
-				
-				
+				e.getMessage();
+				System.out.println(e);
 			
 			}
-    }
+        }
 
-  }
+    }
 }

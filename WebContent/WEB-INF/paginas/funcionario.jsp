@@ -11,11 +11,14 @@
 <body>
 	<header class="layout-cabecalho">
 		<div class="container">
-			<nav class="navegacao">
-				<a href="menu.jsp"><img src="imagem/muchachos.png"
-					title="HOME" width="60" height="60" alt="Muchachos" /></a>
-			</nav>
-		</div>
+      
+       <nav class="navegacao">
+          <a href="menu.jsp"><img src="imagem/muchachos.png" title="HOME"  width="60" height="60" alt="Muchachos" /></a>
+         <div class="navegacao_menu">
+             <h4 class="titulo-formulario--login">${mensagem}</h4>
+         </div>   
+          </nav>
+      </div>
 	</header>
 	
 	<div class="container">

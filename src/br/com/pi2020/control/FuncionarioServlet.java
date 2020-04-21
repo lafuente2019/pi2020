@@ -32,6 +32,7 @@ public class FuncionarioServlet extends HttpServlet {
 			    Funcionario funcionario = funcionarioDao.getFuncionarioId(cod);
 			    request.setAttribute("funcionario", funcionario);
 			} 
+			
 			request.setAttribute("funcionarios", funcionarioDao.getFuncionario());	
 			
 		} catch (SQLException e) {

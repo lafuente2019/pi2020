@@ -70,6 +70,19 @@ body {
   font-weight: normal;
   color: #004b86;
 }
+.titulo-formulario--venda{
+  font-size: 2.6rem;
+  font-weight: normal;
+  color: #004b86;
+  margin-left: 5%;
+
+}
+
+.titulo-formulario--login{
+	text-align:right;
+    font-weight: normal;
+    color: #004b86;
+}
 
 /*--------------------*\
      GRUPO-ENTRADA
@@ -123,8 +136,10 @@ body {
 \*--------------------*/
 
 .tabela {
-  margin-right: 15%;
-  width: 100%;
+
+  margin-right: 5%;
+  margin-left: 5%;
+  width: 90%;
 }
 
 .tabela td, .tabela th {
@@ -223,8 +238,18 @@ h6{
 	margin-left: 92px;
 }
 
+/*--------------------*\
+     navegacao
+\*--------------------*/
 
+.navegacao{
+	
+}
 
+.navegacao_menu{
+	float: right;
+	
+}
 
 
 

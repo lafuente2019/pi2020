@@ -19,14 +19,14 @@
 		       title="HOME" width="70" height="70" alt="Muchachos" />
             <form action="loginServlet" method="post">
         	 
-	            <label class="label"  for="email">Email</label>
-	             <input id="email" name="email" type="email" placeholder="EX: v@gmail.com" class="campo-login" required>
+	            <label class="label"  for="nome">Nome</label>
+	             <input id="nome" name="nome" type="text" placeholder="Digite Nome" class="campo-login" required>
 				  <label class="label" for="senha">Senha</label> 
 				  <input id="senha" name="senha" type="password" class="campo-login" required>
 				   <div style="text-align: center; margin-top: 20px">
 			     <input type="submit" name="accion" value="Logar" class="botao-tabela">
 			   </div>
-			   <h6 class="titulo-formulario--login">${mensagem}</h6>
+			   <h6 class="titulo-formulario--login1">${mensagem}</h6>
 			</form>	
           </div>
   

@@ -101,7 +101,7 @@ public class ProdutoDao {
   
 	      public static List<Produto> buscar(String busca)throws SQLException, Exception {
 		  String sql = "SELECT * FROM cadastroProduto WHERE idProduto like ? or nome like ? or preco like ? or quantidade like ?  or categoria like ?";
-		  busca = '%' +busca+ '%';
+		  busca = busca+ '%';
 		  
 		  List <Produto> listaProduto = null;
 		  

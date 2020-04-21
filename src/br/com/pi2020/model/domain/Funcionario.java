@@ -15,11 +15,13 @@ public class Funcionario extends Pessoa {
 		super();
 	}
    
-
-	public Funcionario(String email, String senha) {
-		super(email);
+	
+	
+	public Funcionario(String nome, String senha) {
+		super(nome);
 		this.senha = senha;
 	}
+
 
 
 	public Funcionario(Integer id, String nome, String cpf, String rg, String sexo, String estadoCivil,

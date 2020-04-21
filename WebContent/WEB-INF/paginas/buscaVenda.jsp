@@ -12,22 +12,21 @@
 
 <body>
 
-	<header class="layout-cabecalho layout-cabecalho--tabela">
+
+	<header class="layout-cabecalho  layout-cabecalho--tabela">
 		<div class="container">
-			<nav class="navegacao  ">
-				<a href="menuu.jsp"><img src="imagem/muchachos.png" title="HOME" width="60"
-					height="60" alt="Muchachos" title="HOME"/></a>
-			</nav>
+			<a href="menu.jsp"><img src="imagem/muchachos.png" width="60"
+				height="60" title="HOME" alt="Muchachos" /></a>
 		</div>
 	</header>
 
 	<div class="container">
-		<h1 class="titulo-formulario">Consulta de Produto</h1>
-		<form action="buscarProdutoServlet" method="get">
+		<h1 class="titulo-formulario">Relatorio de Vendas</h1>
+		<form action="buscarVendaServlet" method="get">
 			<div class="row">
 				<div class="col-sm-3">
 					<div class="grupo-entrada">
-						<input placeholder="Digite o Nome ou codigo aqui " type="text"
+						<input placeholder="Digite Nome,filial ou categoria  " type="text"
 							class="campo" required name="Busca">
 					</div>
 				</div>
@@ -40,34 +39,38 @@
 				</div>
 			</div>
 		</form>
-	</div>	
+	</div>
+	<h1 class="titulo-formulario--venda">Vendas</h1>
 	<table class="tabela">
 		<thead>
 			<tr>
-				<th>Codigo</th>
-				<th>Produto</th>
-				<th>preco</th>
-				<th>quantitade</th>
-				<th>categoria</th>
-				<th>Editar</th>
-				<th>Excluir</th>
+
+				<th>Id Produto</th>
+				<th>Nome Produto</th>
+				<th>Valor Uni.</th>
+				<th>Quantidade</th>
+				<th>Id Venda</th>
+				<th>Data</th>
+				<th>Pagamento</th>
+				<th>Subtotal</th>
+
 			</tr>
 		</thead>
 		<tbody>
-			<c:forEach var="p" items="${listaProduto}">
-			<tr>
-				<td>${p.id}</td>
-				<td>${p.nome}</td>
-				<td>${p.preco}</td>
-				<td>${p.quantidade}</td>
-				<td>${p.categoria}</td>
-				<td><a href=produtoServlet?acao=Editar&id=${p.id}>Editar</a></td>
-				<td><a href=gerenciarProdutoServlet?acao=Excluir&id=${p.id}>Excluir</a></td>
-			</tr>
-		</c:forEach>
+			<c:forEach var="r" items="${listaVenda}">
+				<tr>
+					<td>${r.id}</td>
+					<td>${r.nome}</td>
+					<td>${r.preco}</td>
+					<td>${r.quantidade}</td>
+					<td>${r.idVenda}</td>
+					<td>${r.data}</td>
+					<td>${r.pagamento}</td>
+					<td>${r.subTotal}</td>
+				</tr>
+			</c:forEach>
 		</tbody>
 	</table>
-
 	<footer class="layout-rodape">
 		<div class="container">
 			<p>&copy; Muchachos. Todos os direitos reservados.</p>

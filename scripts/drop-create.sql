@@ -67,3 +67,25 @@ CREATE TABLE cadastroCliente (
     ) default charset = utf8;
    
 insert into cadastroProduto values(default,'man Black', 89.90, 4, 'Perfue masculino', 'perfume', 'ativo'); 
+
+
+CREATE TABLE Venda (
+	idVenda int NOT NULL AUTO_INCREMENT,
+    data DATE not null,
+	pagamento varchar(255),
+    parcela int,
+    subTotal float not null,
+    primary key(idProduto)
+    ) default charset = utf8;
+    
+    alter table venda
+    add foreign key(idCliente)
+    references cadastrocliente(idCurso);
+    
+     alter table venda
+    add foreign key(idFuncionario)
+    references cadastrofuncionario(id);
+    
+     alter table venda
+    add foreign key(idProduto)
+    references cadastroproduto(idProduto);

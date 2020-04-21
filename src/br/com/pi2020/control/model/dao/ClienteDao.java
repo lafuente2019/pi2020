@@ -133,8 +133,9 @@ public class ClienteDao {
 	}	
   
 	      public static List<Cliente> buscar(String busca)throws SQLException, Exception {
-	    	  String sql = "SELECT idCliente,nome,cpf,telefone,email,situacao FROM cadastroCliente WHERE idCliente like ? or nome like ? or cpf like ?";
-		  busca = '%'+busca+'%';
+	    	  String sql = "SELECT idCliente,nome,cpf,telefone,email,situacao FROM cadastroCliente "
+	    	  		+ " WHERE idCliente like ? or nome like ? or cpf like ?";
+		  busca = busca+'%';
 		  
 		  List <Cliente> listaCliente = null;
 		  

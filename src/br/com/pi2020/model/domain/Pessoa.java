@@ -2,8 +2,6 @@ package br.com.pi2020.model.domain;
 
 public class Pessoa {
 	
-
-
 	private Integer id;
 	private String nome;
 	private String cpf;
@@ -26,8 +24,8 @@ public class Pessoa {
 
 	}
 	
-	public Pessoa(String email) {
-		this.email = email;
+	public Pessoa(String nome) {
+		this.nome = nome;
 	}
 
 	public Pessoa(Integer id, String nome, String cpf, String rg, String sexo, String estadoCivil,
