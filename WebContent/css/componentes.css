@@ -118,6 +118,7 @@ body {
         LAYOUT
 \*--------------------*/
 .layout-rodape {
+	
   margin-top: 10%;  
   padding: 40px 0;
 
@@ -127,7 +128,9 @@ body {
   text-align: center;
 }
 .layout-cabecalho{
+  height: 60px;	
   border-bottom: 1px solid #ccc;
+  line-height: 60px;
 
 }
 
@@ -213,6 +216,8 @@ body {
 margin-left: 35%;
     	
 }
+
+S
 #id{
 	padding: 20px:
 }
@@ -234,8 +239,11 @@ margin-left: 35%;
 .label{
 	margin-left: 15%;
 }
-h6{
+h5{
 	margin-left: 92px;
+}
+h4{
+	margin-left: 40%;
 }
 
 /*--------------------*\
@@ -247,9 +255,71 @@ h6{
 }
 
 .navegacao_menu{
-	float: right;
+	float: right;	
+}
+
+.menu__itens{
+	magin-top: 15px;
 	
 }
+
+/*--------------------*\
+     Botao-chaveador
+\*--------------------*/
+
+.botao-chaveador{
+	width: 24px;
+	height:24px;
+    border:0;
+    
+    background-color: none;    
+	background-image: url("../imagem/bars.png");
+}
+/*--------------------*\
+         Menu
+\*--------------------*/
+
+  .menu{
+  position: fixed;
+  top: 57px;
+  left: 0;
+  bottom: 0;
+  
+  display: none;
+  width: 280px;
+  border-right: 1px solid #eee;
+  
+  margin:0;
+  font-size: 1.4em;
+  
+  background-color: #fbfbfb;
+  
+  list-style: none;
+  
+  }
+  
+  .menu--exibindo{
+  display: block;
+  }
+  
+  .menu__itens{
+  display: block;
+  
+ }
+
+.layout-rodape-cos{
+	 padding: 40px 0;
+	
+  background-color: #484848;
+
+  color: #fff;
+  text-align: center;
+}
+
+
+
+
+
 
 
 

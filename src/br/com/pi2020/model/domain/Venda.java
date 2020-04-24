@@ -9,9 +9,8 @@ public class Venda extends Produto{
 	private String pagamento;
 	private Integer parcelamento;
 	private Float subTotal;
-	 
-	private Cliente cliente = new Cliente();
-	private Funcionario funcionario = new Funcionario();
+	private Integer idCliente;
+	private Integer idFuncionario;
 	
 	
 	public Venda() {
@@ -29,19 +28,17 @@ public class Venda extends Produto{
 		this.subTotal = subTotal;
 	}
 
-	public Venda(Integer id, String nome, Float preco, Integer quantidade, Integer idVenda, String data, Float subTotal,
-			Cliente cliente, Funcionario funcionario) {
+	public Venda(Integer id, String nome, Float preco, Integer quantidade, Integer idVenda, String data,String pagamento, Float subTotal,
+			Integer idCliente) {
 		super(id, nome, preco, quantidade);
 		this.idVenda = idVenda;
 		this.data = data;
+		this.pagamento = pagamento;
 		this.subTotal = subTotal;
-		this.cliente = cliente;
-		this.funcionario = funcionario;
+		this.idCliente = idCliente;
+		
+	
 	}
-	
-	
-
-
 
 	public Venda(Integer id, String nome, Float preco, Integer quantidade, Integer idVenda, String pagamento,
 			Float subTotal) {
@@ -104,29 +101,26 @@ public class Venda extends Produto{
 
 
 
-	public Cliente getCliente() {
-		return cliente;
+	public Integer getIdCliente() {
+		return idCliente;
 	}
 
 
 
-	public void setCliente(Cliente cliente) {
-		this.cliente = cliente;
+	public void setIdCliente(Integer idCliente) {
+		this.idCliente = idCliente;
 	}
 
 
 
-	public Funcionario getFuncionario() {
-		return funcionario;
+	public Integer getIdFuncionario() {
+		return idFuncionario;
 	}
 
 
 
-	public void setFuncionario(Funcionario funcionario) {
-		this.funcionario = funcionario;
+	public void setIdFuncionario(Integer idFuncionario) {
+		this.idFuncionario = idFuncionario;
 	}
-
-	
-	
 }
 

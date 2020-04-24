@@ -34,7 +34,7 @@ public class LoginServlet extends HttpServlet {
 					RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/paginas/menuu.jsp");
 				    dispatcher.forward(request, response);
 				}else {
-					request.setAttribute("mensagem", "Email ou senha invalido");
+					request.setAttribute("mensagem", "Nome ou senha invalido");
 					RequestDispatcher dispatcher = request.getRequestDispatcher("index.jsp");
 				    dispatcher.forward(request, response);
 				}

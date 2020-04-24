@@ -15,7 +15,7 @@
 		<div class="container">
 			<nav class="navegacao  ">
 				<a href="menu.jsp"><img src="imagem/muchachos.png" width="60"
-					height="60" alt="Muchachos" title="HOME" /></a>
+					height="55" alt="Muchachos" title="HOME" /></a>
 			</nav>
 		</div>
 	</header>

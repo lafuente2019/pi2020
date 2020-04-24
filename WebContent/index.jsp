@@ -15,7 +15,7 @@
     
         <div  class="container-login">
         
-          <img class="img-login" src="imagem/muchachos.png"
+          <img class="img-login" src="imagem/logo.png"
 		       title="HOME" width="70" height="70" alt="Muchachos" />
             <form action="loginServlet" method="post">
         	 
@@ -26,7 +26,7 @@
 				   <div style="text-align: center; margin-top: 20px">
 			     <input type="submit" name="accion" value="Logar" class="botao-tabela">
 			   </div>
-			   <h6 class="titulo-formulario--login1">${mensagem}</h6>
+			   <h5 class="titulo-formulario--login1">${mensagem}</h5>
 			</form>	
           </div>
   

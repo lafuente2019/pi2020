@@ -15,8 +15,8 @@
 	<header class="layout-cabecalho layout-cabecalho--tabela">
 		<div class="container">
 			<nav class="navegacao  ">
-				<a href="menuu.jsp"><img src="imagem/muchachos.png" title="HOME" width="60"
-					height="60" alt="Muchachos" title="HOME"/></a>
+				<a href="menu.jsp"><img src="imagem/muchachos.png" title="HOME" width="60"
+					height="55" alt="Muchachos" title="HOME"/></a>
 			</nav>
 		</div>
 	</header>

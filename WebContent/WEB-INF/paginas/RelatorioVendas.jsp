@@ -14,7 +14,7 @@
    <header class="layout-cabecalho  layout-cabecalho--tabela">
       <div class="container">
         <nav class="navegacao  ">
-          <a href="menu.jsp"><img src="imagem/muchachos.png" width="60" height="60" title="HOME" alt="Muchachos" /></a>
+          <a href="menu.jsp"><img src="imagem/muchachos.png" width="60" height="55" title="HOME" alt="Muchachos" /></a>
         </nav> 
       </div>
     </header> 
@@ -37,9 +37,8 @@
                </div>
             </div>
            </form>  
-          </div>         
-        
-         <h1 class="titulo-formulario--venda">Vendas</h1> 
+          </div> 
+                    
           <table class="tabela">
 		   <thead>
 			<tr>
@@ -51,10 +50,13 @@
 				<th>Data</th>
 				<th>Pagamento</th>	
 			    <th>Subtotal</th>
+			    <th>idCliente</th>	
+			  
+			  
 			</tr>
 		   </thead>
 		  <tbody>
-			<c:forEach var="r" items="${vendas}">
+			<c:forEach var="r" items="${listaVenda}">
 			<tr>
 				<td>${r.id}</td>
 				<td>${r.nome}</td>
@@ -64,10 +66,14 @@
 				<td>${r.data}</td>
 				<td>${r.pagamento}</td>
 				<td>${r.subTotal}</td>
+				<td>${r.idCliente}</td>
+				
+				
 			</tr>
 		   </c:forEach>
 		 </tbody>
 	  </table>
+	 
        <footer class="layout-rodape">
          <div class="container">
           <p>&copy; Muchachos. Todos os direitos reservados.</p>

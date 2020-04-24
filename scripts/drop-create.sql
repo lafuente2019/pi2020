@@ -71,7 +71,7 @@ insert into cadastroProduto values(default,'man Black', 89.90, 4, 'Perfue mascul
 
 CREATE TABLE Venda (
 	idVenda int NOT NULL AUTO_INCREMENT,
-    data DATE not null,
+    data VARCHAR(10) not null,
 	pagamento varchar(255),
     parcela int,
     subTotal float not null,
