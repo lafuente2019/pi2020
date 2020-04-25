@@ -1,7 +1,8 @@
 	package br.com.pi2020.control;
 
 import java.io.IOException;
-import java.util.List;
+import java.sql.SQLException;
+
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -10,31 +11,31 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import br.com.pi2020.control.model.dao.ClienteDao;
 import br.com.pi2020.control.model.dao.ProdutoDao;
-import br.com.pi2020.model.domain.Produto;
 
-
-/**
- * Servlet implementation class VendaServlet
- */
 @WebServlet("/vendaServlet")
 public class VendaServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-  
+	private ProdutoDao produtoDao = new ProdutoDao();
+	private ClienteDao clienteDao = new ClienteDao();
 
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		try {
-			List<Produto> listaProduto = ProdutoDao.buscar(request.getParameter("Busca"));
-			request.setAttribute("listaProduto", listaProduto);	
+			request.setAttribute("produtos", produtoDao.getProduto1());
+			 request.setAttribute("clientes", clienteDao.getCliente1());
 			
-		} catch (Exception e) {
-			request.setAttribute("mensagem", "Erro de banco de dados: " + e.getMessage());
+		} catch (SQLException e) {
+			request.setAttribute("mensagem","Erro de banco de dados");
 			
-	   }
+		} catch (ClassNotFoundException e) {
+			
+			request.setAttribute("mensagem", "Erro de driver");
+		} 
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/paginas/venda.jsp");
-		dispatcher.forward(request, response);
-	}
+	    dispatcher.forward(request, response);
+	}  
 
 }

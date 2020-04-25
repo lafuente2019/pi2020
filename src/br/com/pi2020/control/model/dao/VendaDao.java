@@ -9,13 +9,14 @@ import java.util.List;
 
 import br.com.pi2020.model.domain.Venda;
 
+
 public class VendaDao {
 
 	public List<Venda> getVenda() throws SQLException, ClassNotFoundException {
 
 		Connection conexao = conexaoJDBCFactory.getConexao();
 		PreparedStatement ps = conexao.prepareStatement(
-				"SELECT p.idProduto, p.nome, p.preco, p.quantidade, v.idVenda, v.data, v.pagamento, v.subTotal, c.idCliente, f.idFuncionario FROM Venda as v"
+				"SELECT p.idProduto, p.nome, p.preco, p.quantidade, v.idVenda, v.data, v.pagamento, v.subTotal, c.idCliente FROM Venda as v"
 						+ " join cadastroProduto as p" 
 						+ " on p.idProduto = v.idProduto"
 						+ " join cadastroCliente as c"
@@ -36,7 +37,7 @@ public class VendaDao {
 	public void salvar(Venda venda) throws ClassNotFoundException, SQLException {
 		Connection conexao = conexaoJDBCFactory.getConexao();
 		PreparedStatement statement = conexao.prepareStatement(
-				" insert into vendas (idProduto, nome , preco, quantidade, idVenda, data, pagamento, subTotal, idCliente, idFuncionario)  values (?,?,?,?,?,?,?,?,?,?)");
+				" insert into vendas (idProduto, nome , preco, quantidade, idVenda, data, pagamento, subTotal, idCliente, idFuncionario)  values (?,?,?,?,?,?,?,?,?)");
 
 		statement.setInt(1, venda.getId());
 		statement.setString(2, venda.getNome());
@@ -47,7 +48,6 @@ public class VendaDao {
 		statement.setString(7, venda.getPagamento());
 		statement.setFloat(8, venda.getSubTotal());
 		statement.setInt(9, venda.getIdCliente());
-		statement.setInt(10, venda.getIdFuncionario());
 		statement.execute();
 
 	}
@@ -116,6 +116,6 @@ public class VendaDao {
 		}
 		return listaVenda;
 	}
-	
-	
+     
 }
+

@@ -50,8 +50,7 @@
 				<th>Data</th>
 				<th>Pagamento</th>	
 			    <th>Subtotal</th>
-			    <th>idCliente</th>	
-			  
+			    <th>idCliente</th>
 			  
 			</tr>
 		   </thead>
@@ -67,7 +66,6 @@
 				<td>${r.pagamento}</td>
 				<td>${r.subTotal}</td>
 				<td>${r.idCliente}</td>
-				
 				
 			</tr>
 		   </c:forEach>
